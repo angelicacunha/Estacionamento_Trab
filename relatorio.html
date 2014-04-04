@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="estacionamentoApp">
+<head>
+  <title>Estacionamento</title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+   
+</head>
+<body ng-controller="reportController">
+
+  <div class= "topo"></div>
+  
+
+<div id="header">
+
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="controle_estacionamento.html">Controle estacionamento</a></li>
+      <li><a href="relatorio.html">Relatório</a></li>
+    </ul>
+
+  </div>
+  <h2>Relatório</h2>
+
+
+
+     <div id="piechart" style="width: 900px; height: 500px;"></div>
+     
+      
+   
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/vendor/jquery/jquery.js"></script>
+<script src="js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="js/vendor/highcharts/highcharts.js"></script>
+<script src="js/vendor/highcharts/themes/grid.js"></script>
+<script src="js/estacionamentoApp.js"></script>
+<script src="js/controller/AluguelController.js"></script>
+<script src="js/service/IdxDBService.js"></script>
+<script src="js/controller/ReportController.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        <pie-chart data="regiaoData" title="{{chartTitle}}" 
+               width="{{chartWidth}}" height="{{chartHeight}}"
+               ></pie-chart>‏
+      
+        var options = {
+          title: 'Porcentagem por modelo'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <script src="js/controller/ReportController.js"></script>
+    <script src="js/estacionamentoApp.js"></script>
+    <script src="js/controller/EstacionamentoController.js"></script>
+</body>
+</html>

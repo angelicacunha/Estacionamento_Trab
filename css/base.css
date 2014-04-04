@@ -1,0 +1,32 @@
+@font-face {
+	font-family: 'Expletus Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Expletus Sans'), local('ExpletusSans'), url(../fonts/font.woff) format('woff');
+}
+
+* {
+	font-family: 'Expletus Sans';
+}
+
+th.command {
+	width: 10%;
+}
+
+.filter-field {
+	width: 300px;
+}
+
+.actions {
+	margin-bottom: 10px;
+}
+
+.bottom-space {
+	clear: both;
+}
+
+.chart-medium {
+	width: 100%;
+	height: 450px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html ng-app="estacionamentoApp">
+<head>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<title>Lista de carros</title>
+	<meta charset="UTF-8"/>
+</head>
+<body>
+	<div class= "topo"></div>
+	
+	<div id="header">
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="controle_estacionamento.html">Controle estacionamento</a></li>
+      <li><a href="relatorio.html">Relatório</a></li>
+    </ul>
+  </div>
+
+<div class="wrapper" ng-controller="aluguelController" ng-init="init()">
+	<section class="form">
+		<h2>Cadastrar veículo ocupante</h2>
+		<form action="" method="POST" class="form-horizontal" 
+		 ng-submit="addAluguel()">
+			<input id="key" ng-model="key" type="hidden" />
+			<div class="control-group">
+				<label class="control-label" for="marca">
+					Marca
+				</label>
+				<div class="controls">
+					<input id="marca" ng-model="marca" required />
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label" for="modelo">
+					Modelo
+				</label>
+				<div class="controls">
+					<input id="modelo" ng-model="modelo" required />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="placa">
+					Placa
+				</label>
+				<div class="controls">
+					<input id="placa" ng-model="placa" required />
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="horaentrada">
+					Hora de Entrada
+				</label>
+				<div class="controls">
+					<input id="horaentrada" ng-model="horaentrada" required />
+				</div>
+			</div>
+
+			<div class="buttons">
+				<input type="submit" class="btn btn-sm btn-primary" 
+				 value="Salvar" />
+			</div>
+		</form>
+	</section>
+
+	<section class="list">
+		<h2>Lista de carros</h2>
+		<table class="table table-bordered table-striped">
+			<tfoot>
+				
+			</tfoot>
+			<tbody>
+
+				<!--<tr ng-repeat="aluguel in list">-->
+					<tr ng-repeat="aluguel in list" ng-click="editAluguel(aluguel)">
+					<td>{{aluguel.marca}}</td>
+					<td>{{aluguel.modelo}}</td>
+					<td>{{aluguel.placa}}</td>
+					<td>{{aluguel.horaentrada}}</td>
+					<td>
+						<button class="editBtn btn btn-success" ng-click="prepareEditAluguel(aluguel)">Editar</button>
+		    			<button class="deleteBtn btn btn-danger"ng-click="deleteAluguel(aluguel)">Excluir</button>
+		    			
+                                   
+					
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+</div>
+
+	</section>
+        <footer class="well well-small text-center">Trabalho da disciplina Tecnologia Client Side - Parking Car - Angélica Carvalho Cunha & Tiago Felipe dos Santos</footer>
+    </section>
+ <script src="js/vendor/jquery/jquery.js"></script>
+ <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="js/vendor/angular.min.js"></script>
+<script src="js/estacionamentoApp.js"></script>
+<script src="js/service/IdxDBService.js"></script>
+<script src="js/controller/AluguelController.js"></script>
+
+
+</body>
+</html>

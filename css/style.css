@@ -1,0 +1,129 @@
+body {
+
+background-color: #026873;
+background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+background-size: 13px, 29px, 37px, 53px;
+
+padding:0px;
+
+margin:0px;
+}
+
+#header ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+  #header li {
+    float:left;
+    margin:0;
+    padding:0;
+}
+
+ #header a {
+    display:block;
+
+}
+
+.wrapper {
+    width: 900px;
+    margin: 0px auto;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+}
+
+
+.topo { 
+   /* position: fixed; */
+    top: -3px; 
+    background-image: url(images/carparking.png);
+    padding:95px; 
+    width: 9%;
+    margin-right:  0px; 
+    z-index: 1;
+}
+
+ 
+#header ul {
+    padding:0px;
+    margin:0px;
+    float: left;
+    width: 100%;
+    background-color:#EDEDED;
+    border-bottom: 3px solid #000;
+    border-top: 3px solid #000;
+    margin-right:  0px; 
+    list-style:none;
+    font:100% Tahoma;
+            
+}
+ 
+#header ul li { display: inline; }
+ 
+#header ul li a {
+    background-color:#EDEDED;
+    color: #333;
+    text-decoration: none;
+    border-bottom:3px;
+    padding: 2px 10px;
+    float:left;
+}
+ 
+#header ul li a:hover {
+    background-color:#D6D6D6;
+    color: #6D6D6D;
+    border-bottom:3px solid #1E90FF;
+}
+
+            
+ .thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+
+.parking {
+    margin: 0 auto;
+    width: 400px;
+}
+
+.parking img {
+    border: 5px solid #000;
+    box-shadow: 1px 1px 2px #fff, -1px -1px 2px #fff;
+    display: block;
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    padding: 5px;
+}
+
+.parking .controls {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.parking .previous {
+    background-image: url(images/previous.png);
+}
+
+.parking .next {
+    background-image: url(images/next.png);
+}
+
+footer{
+   background-color: #EDEDED;
+   text-align: center;
+}
