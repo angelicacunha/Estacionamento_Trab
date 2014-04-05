@@ -5,35 +5,35 @@ var estacionamentoApp = angular.module('estacionamentoApp', []);
 
 estacionamentoApp.directive('pieChart', function ($timeout) {
   return {
-    restrict: 'EA',
+    restrict: 'Carros',
     scope: {
-      title:    '@title',
-      width:    '@width',
-      height:   '@height',
-      data:     '=data',
+      marca:    '@marca',
+      modelo:    '@modelo',
+      horaentrada:   '@horaentrada',
+      placa:     '=placa',
       selectFn: '&select'
     },
     link: function($scope, $elm, $attr) {
       
-      // Create the data table and instantiate the chart
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Label');
-      data.addColumn('number', 'Value');
+      // Create the placa table and instantiate the chart
+      var placa = new google.visualization.placaTable();
+      placa.addColumn('string', 'Label');
+      placa.addColumn('number', 'Value');
       var chart = new google.visualization.PieChart($elm[0]);
 
       draw();
       
-      // Watches, to refresh the chart when its data, title or dimensions change
-      $scope.$watch('data', function() {
+      // Watches, to refresh the chart when its placa, marca or dimensions change
+      $scope.$watch('placa', function() {
         draw();
       }, true); // true is for deep object equality checking
-      $scope.$watch('title', function() {
+      $scope.$watch('marca', function() {
         draw();
       });
-      $scope.$watch('width', function() {
+      $scope.$watch('modelo', function() {
         draw();
       });
-      $scope.$watch('height', function() {
+      $scope.$watch('horaentrada', function() {
         draw();
       });
 
@@ -43,18 +43,18 @@ estacionamentoApp.directive('pieChart', function ($timeout) {
           $timeout(function () {
             draw.triggered = false;
             var label, value;
-            data.removeRows(0, data.getNumberOfRows());
-            angular.forEach($scope.data, function(row) {
+            placa.removeRows(0, placa.getNumberOfRows());
+            angular.forEach($scope.placa, function(row) {
               label = row[0];
               value = parseFloat(row[1], 10);
               if (!isNaN(value)) {
-                data.addRow([row[0], value]);
+                placa.addRow([row[0], value]);
               }
             });
-            var options = {'title': $scope.title,
-                           'width': $scope.width,
-                           'height': $scope.height};
-            chart.draw(data, options);
+            var options = {'marca': $scope.marca,
+                           'modelo': $scope.modelo,
+                           'horaentrada': $scope.horaentrada};
+            chart.draw(placa, options);
           }, 0, true);
         }
       }
