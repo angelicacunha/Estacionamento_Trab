@@ -44,8 +44,8 @@
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
       function drawChart() {
-        <pie-chart data="regiaoData" title="{{chartTitle}}" 
-               width="{{chartWidth}}" height="{{chartHeight}}"
+        <pie-chart data="placa" title="{{chartMarca}}" 
+               width="{{chartMarca}}" height="{{chartModelo}}"
                ></pie-chart>‏
       
         var options = {
@@ -56,8 +56,11 @@
         chart.draw(data, options);
       }
     </script>
-    <script src="js/controller/ReportController.js"></script>
+    <script src="js/vendor/jquery/jquery.js"></script>
+    <script src="js/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
     <script src="js/estacionamentoApp.js"></script>
-    <script src="js/controller/EstacionamentoController.js"></script>
+    <script src="js/service/IdxDBService.js"></script>
+    <script src="js/controller/ReportController.js"></script>
 </body>
 </html>
