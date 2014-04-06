@@ -1,6 +1,7 @@
 /*
  * AngularJS Module
  */
+ 
 var estacionamentoApp = angular.module('estacionamentoApp', []);
 
 estacionamentoApp.directive('pieChart', function ($timeout) {
